@@ -225,24 +225,17 @@ st.title('Social AI')
 
 #Tokenizers
 DialoGPT_large = 'microsoft/DialoGPT-large'
-gpt2 = "gpt2"
 gpt2_large = "gpt2-large"
 
 #Dialog Models
-final_character = 'output-final-character-model-2'
-movie_dialog = 'movie_dialog_model_large'
+final_character = 'Models/response_model_1'
+movie_dialog = 'Models/response_model_dialog'
 
 #Completion Models
-poems = "poetry_model_completion"
-insta_model = 'insta_model'
-insta_model_new = 'model_save_insta'
-twitter_model = 'twitter_model'
-lyrics_model_2 = 'lyrics_model_2'
-
-#tokenizer_choice = st.sidebar.selectbox(
-#    'Select Tokenizer', [DialoGPT_large, gpt2, poems, insta_model, final_character], key="tokenizer")
-#model_choice = st.sidebar.selectbox(
-#    'Select Model', [DialoGPT_large, gpt2, poems, insta_model, final_character], key="model")
+poems = "Models/poetry_model"
+insta_model_new = 'Models/insta_model'
+twitter_model = 'Models/twitter_model'
+lyrics_model_2 = 'Models/lyrics_model'
 
 st.sidebar.header('Choose output type')
 
