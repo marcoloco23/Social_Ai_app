@@ -233,9 +233,9 @@ movie_dialog = 'Models/response_model_dialog'
 
 #Completion Models
 poems = "Models/poetry_model"
-insta_model_new = 'Models/insta_model'
+insta_model = 'Models/gypsea_model'
 twitter_model = 'Models/twitter_model'
-lyrics_model_2 = 'Models/lyrics_model'
+lyrics_model = 'Models/lyrics_model'
 
 st.sidebar.header('Choose output type')
 
@@ -243,7 +243,7 @@ platform_choice = st.sidebar.selectbox('Choose Platform', ['Instagram','Twitter'
 
 if platform_choice == 'Instagram':
     tokenizer_choice = gpt2_large
-    model_choice = insta_model_new
+    model_choice = insta_model
 
 if platform_choice == 'Twitter':
     tokenizer_choice = gpt2_large
@@ -251,7 +251,7 @@ if platform_choice == 'Twitter':
     st.sidebar.write('Make sure max length is less than 70')
 
 #Parameters and options
-temperature = st.sidebar.slider('Temperature', 1.0, 5.0, 3.0, key="temp")
+temperature = st.sidebar.slider('Temperature', 1.0, 5.0, 1.0, key="temp")
 max_length = st.sidebar.slider('Max Length', 10, 100, 10, key="max_length")
 samples = st.sidebar.slider('Samples', 1, 10, 1, key="samples")
 scoring = st.sidebar.checkbox('Scoring?', key='scoringbox')
@@ -311,7 +311,7 @@ if poem_button == True:
 if lyrics_button == True:
     with st.spinner(text='Loading Models'):
         tokenizer, model = get_tokenizer_and_model(
-            gpt2_large, lyrics_model_2)
+            gpt2_large, lyrics_model)
     with st.spinner(text='Thinking...'):
         sample_outputs = generate_lyrics(tokenizer, model,
                                  temperature, 400, 1)
